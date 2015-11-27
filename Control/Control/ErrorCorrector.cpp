@@ -1,6 +1,7 @@
 #include <vector>
 #include "ErrorCorrector.h"
 #include "Math.h"
+#include <iostream>
 
 using namespace std;
 
@@ -22,13 +23,13 @@ double correctTuple(vector<double> v)
 
 	//Normalize readings
 	for (int i = 0; i < n; i++) {
-		double difference = abs (v[i]-m);
-		if (difference < sd) {
+		if (v[i] > (m-sd) && v[i] < (m+sd)){
+			cout << "Added Value" << endl;
 			normalReadings.push_back(v[i]);
 		}
 	}
 
 	finalValue = mean(normalReadings);
 
-	return sd;
+	return finalValue;
 }

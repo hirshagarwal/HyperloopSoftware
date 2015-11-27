@@ -18,7 +18,7 @@ double standardDeviation(vector<double> v, double m) {
 	
 	sd = abs ((sumDif) / (size-1));
 
-	return sd;
+	return 1;
 }
 
 double mean(vector<double> v) {
@@ -30,6 +30,5 @@ double mean(vector<double> v) {
 	}
 
 	double m = sum / size;
-
 	return m;
 }
